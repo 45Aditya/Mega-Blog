@@ -1,19 +1,17 @@
 import React from 'react'
-import {Editor} from '@tinymce/tinymce-react'
-import {Controller} from 'react-hook-form'
+import {Editor } from '@tinymce/tinymce-react';
+import {Controller } from 'react-hook-form';
 
-//This control is used to provide access of this component state 
-export default function RTE({name, control, label, defaultValue=""}) {
+
+export default function RTE({name, control, label, defaultValue =""}) {
   return (
-    <div className='w-full'>
-      {label && 
-      <label className='inline-block mb-1 pl-1'>
-        {label}
-      </label>}
-      <Controller
-      name={name || "content"}
-      control={control}
-      render={({field: {onChange}}) => (
+    <div className='w-full'> 
+    {label && <label className='inline-block mb-1 pl-1'>{label}</label>}
+
+    <Controller
+    name={name || "content"}
+    control={control}
+    render={({field: {onChange}}) => (
         <Editor
         initialValue={defaultValue}
         init={{
@@ -48,8 +46,10 @@ export default function RTE({name, control, label, defaultValue=""}) {
         }}
         onEditorChange={onChange}
         />
-      )} 
-      />
-    </div> 
+    )}
+    />
+
+     </div>
   )
 }
+
